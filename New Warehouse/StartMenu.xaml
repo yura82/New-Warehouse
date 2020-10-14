@@ -1,0 +1,48 @@
+﻿<Window x:Class="New_Warehouse.StartMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:New_Warehouse"
+        mc:Ignorable="d"
+        Title="REGISTRATION" Height="450" Width="800">
+    <Grid  Background="LightCoral">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="20" Text="Voornaam " Height="25" FontSize="15"/>
+        <TextBox x:Name="txtVoornam" Grid.Column="1" Margin="9.8,20,9.6,30"/>
+        <TextBlock Grid.Row="1" Margin="20" Text="Achternaam " Height="25" FontSize="15"/>
+        <TextBox x:Name="txtAChternaam" Grid.Column="1" Grid.Row="1" Margin="9.8,20,9.6,30"/>
+        <TextBlock Grid.Row="2" Margin="20" Text="Straatnaam " Height="25" FontSize="15"/>
+        <TextBox x:Name="txtStraatnaam" Grid.Column="1" Grid.Row="2" Margin="9.8,20,9.6,30"/>
+        <TextBlock Grid.Row="3" Margin="20" Text="Huisnnummer " Height="25" FontSize="15"/>
+        <TextBox x:Name="txtHuisnummer" Grid.Column="1" Grid.Row="3" Margin="9.8,20,9.6,30"/>
+        <TextBlock Grid.Row="4" Margin="20" Text="Postcode " Height="25" FontSize="15"/>
+        <TextBox x:Name="txtPostcode" Grid.Column="1" Grid.Row="4" Margin="9.8,20,9.6,30"/>
+        <TextBlock Grid.Column="2"  Margin="20" Text="Gemeente " Height="25" FontSize="15"/>
+        <TextBox x:Name="txtGemeente" Grid.Column="3"  Margin="9.8,20,9.6,30"/>
+        <TextBlock Grid.Column="2" Grid.Row="1" Margin="20" Text="Emailadres " Height="25" FontSize="15"/>
+        <TextBox x:Name="txtEmail" Grid.Column="3" Grid.Row="1" Margin="9.8,20,9.6,30"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" Margin="20" Text="Aangemakt op " Height="25" FontSize="15"/>
+        <DatePicker x:Name="dtAangemaktop" Grid.Row="2" Grid.Column="3"/>
+        <TextBlock Grid.Column="2" Grid.Row="3" Margin="20" Text="Opmerking " Height="25" FontSize="15"/>
+        <TextBox x:Name="txtOpmerking" Grid.Row="3" Grid.Column="3" Margin="9.8,20,9.6,30"/>
+        <TextBlock Grid.Column="4" Margin="24.6,20,14.6,20" Text="GSM"/>
+        <TextBox x:Name="txtTelefonnummer" Grid.Column="4" Grid.Row="1" Margin="9.8,20,9.6,30"/>
+        <Button x:Name="btnAdd" Grid.Row="4" Grid.Column="2" Margin="25" Background="AliceBlue" Click="btnAdd_Click" Content="ADD"/>
+        <Button x:Name="btnReset" Grid.Row="4" Grid.Column="3" Margin="25" Background="Aquamarine" Click="btnReset_Click" Content="RESET"/>
+        <Button x:Name="btnCansel" Grid.Row="4" Grid.Column="4" Margin="25" Content="CENSEL" Click="btnCansel_Click"  />
+    </Grid>
+</Window>
