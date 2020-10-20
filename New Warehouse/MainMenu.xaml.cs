@@ -23,5 +23,32 @@ namespace New_Warehouse
         {
             InitializeComponent();
         }
+
+        private void btnShopping_Click(object sender, RoutedEventArgs e)
+        {
+            ShopScreen shopScreen = new ShopScreen();
+            shopScreen.Show();
+            this.Close();
+        }
+
+        private void btnStrings_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnWinds_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnProductInfor_Click(object sender, RoutedEventArgs e)
+        {
+            using (WareHouseBEntities cxt = new WareHouseBEntities())
+            {
+                
+            }
+        }
+
+        
     }
 }

@@ -28,8 +28,8 @@ namespace New_Warehouse
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             string username = txtUsername.Text;
-            string paswoord = txtPaswoord.Text;
-            if (txtUsername.Text == "" || txtPaswoord.Text == "")
+            string paswoord = txtPaswoord.Password;
+            if (txtUsername.Text == "" || txtPaswoord.Password == "")
             {
                 MessageBox.Show("Please fill in User name and Pasword ");
             }
@@ -58,6 +58,32 @@ namespace New_Warehouse
             StartMenu startMenu = new StartMenu();
             startMenu.Show();
             this.Close();
+        }
+
+       
+
+        private void btnAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            string username = txtUsername.Text;
+            string paswoord = txtPaswoord.Password;
+            using (WareHouseBEntities cxt = new WareHouseBEntities())
+            {
+                
+                var checkAdmin = cxt.Paswoords.Where(ap => ap.UserName == username && ap.UserPaswoord == paswoord && ap.UserId == 1 ).Count();
+                if (checkAdmin == 1)
+                {
+                    Paswoord login = cxt.Paswoords.Where(p => p.UserName == username).FirstOrDefault();
+                    AdminMenu adminMenu = new AdminMenu();
+                    adminMenu.Show();
+                    this.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("You are not administrator");
+                }
+
+            }
         }
     }
 }

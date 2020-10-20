@@ -23,5 +23,25 @@ namespace New_Warehouse
         {
             InitializeComponent();
         }
+
+        private void btnPrintInvoice_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Strings_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Winds_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Rest_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

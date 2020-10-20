@@ -7,13 +7,26 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="Bisque">
     <Grid Background="YellowGreen" Margin="2">
-        <StackPanel >
+        <DockPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="672"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnAdmin" Grid.Column="1" Content="Admin"  Click="btnAdmin_Click" Foreground="Blue"  Background="YellowGreen"/>
+            </Grid>
+        </DockPanel>
+        <StackPanel Margin="10,0,-10.4,0" >
             <Label Content="LOGIN" Foreground="White" FontSize="25" HorizontalAlignment="Center"/>
             <Separator></Separator>
             <Label Content="Username" Foreground="White" FontSize="30" RenderTransformOrigin="0.505,-0.591" Height="43" Margin="0,0,-0.4,0"/>
             <TextBox x:Name="txtUsername" Margin="20,20,353.6,20" Height="25" RenderTransformOrigin="0.578,1.685"/>
             <Label Content="Paswoord" Foreground="White" FontSize="30" Height="42" Margin="0,0,-0.4,0" />
-            <TextBox x:Name="txtPaswoord" Margin="20,30,353.6,50" Height="25" RenderTransformOrigin="0.784,0.598"/>
+            <PasswordBox PasswordChar="*" x:Name="txtPaswoord" Margin="20,30,353.6,50" Height="25" RenderTransformOrigin="0.784,0.598"/>
             <Button x:Name="btnSubmit" Content="Submit" Margin="594,0,48.6,0" Click="btnSubmit_Click" Height="37 " FontSize="20" Foreground="Red" FontStyle="Normal" RenderTransformOrigin="-0.027,0.589"/>
             <Button x:Name="btnNew" Content="Registr" FontSize=" 25" Foreground ="Green" Click="btnNew_Click"  Margin="594,0,48.6,0" Height="37" />
         </StackPanel>

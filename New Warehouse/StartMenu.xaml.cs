@@ -58,7 +58,7 @@ namespace New_Warehouse
                     UserPaswoord = randompaswoord.ToString(),
                     UserType = "Klant"
                 }) ;
-                MessageBox.Show($"Your user name is{txtVoornam.Text }{dtAangemaktop.SelectedDate} and paswoord is {randompaswoord} ");
+                MessageBox.Show($"Your user name is{txtVoornam.Text} and paswoord is {randompaswoord} ");
                 cxt.SaveChanges();
             }
 
