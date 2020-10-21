@@ -19,9 +19,43 @@ namespace New_Warehouse
     /// </summary>
     public partial class AdminMenu : Window
     {
+        
+
         public AdminMenu()
         {
             InitializeComponent();
+
+        }
+       
+
+        private void btnView_Click(object sender, RoutedEventArgs e)
+        {
+            using (WareHouseBEntities cxt = new WareHouseBEntities())
+            {
+                var viewquery = cxt.Klants.Select(k=>k);
+                dataKlanten.ItemsSource = cxt.Klants.ToList();
+            }
+
+        }
+
+        private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            using (WareHouseBEntities cxt = new WareHouseBEntities())
+            {
+                
+                cxt.SaveChanges();
+            }
+            
+        }
+
+        private void btnViewWorkers_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

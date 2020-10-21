@@ -7,6 +7,55 @@
         mc:Ignorable="d"
         Title="AdminMenu" Height="450" Width="800">
     <Grid>
-        
+        <TabControl Margin="0,5,-0.4,-5">
+            <TabItem Header="KLANTEN">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="1" x:Name="dataKlanten"/>
+                    <DockPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                
+                            </Grid.RowDefinitions>
+                            <Button x:Name="btnView" Content="View" Click="btnView_Click" Margin="8"/>
+                            <Button x:Name="btnSaveChanges" Content="Save" Click="btnSaveChanges_Click" Margin="8" Grid.Row="1"/>
+                            
+                        </Grid>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Workers">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="1" x:Name="Workers"/>
+                    <DockPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                            <Button x:Name="btnViewWorkers" Content="View" Margin="8" Click="btnViewWorkers_Click"/>
+                            <Button Grid.Row="1" x:Name="Save" Margin="8" Content="Save" Click="Save_Click"/>
+                            
+                        </Grid>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Product">
+                
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
