@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,21 +20,22 @@ namespace New_Warehouse
     /// </summary>
     public partial class AdminMenu : Window
     {
-        
+
 
         public AdminMenu()
         {
             InitializeComponent();
 
         }
-       
+
 
         private void btnView_Click(object sender, RoutedEventArgs e)
         {
             using (WareHouseBEntities cxt = new WareHouseBEntities())
             {
-                var viewquery = cxt.Klants.Select(k=>k);
-                dataKlanten.ItemsSource = cxt.Klants.ToList();
+
+                var viewquery = cxt.Klants.Select(k => k);
+                dataKlanten.ItemsSource = viewquery.ToList();
             }
 
         }
@@ -42,20 +44,41 @@ namespace New_Warehouse
         {
             using (WareHouseBEntities cxt = new WareHouseBEntities())
             {
-                
+
                 cxt.SaveChanges();
             }
-            
+
         }
 
         private void btnViewWorkers_Click(object sender, RoutedEventArgs e)
         {
-
+            using (WareHouseBEntities cxt = new WareHouseBEntities())
+            {
+                var viewworkerquery = cxt.Leveranciers.Select(l=>l);
+                dtWorkers.ItemsSource = viewworkerquery.ToList();
+            }
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            using (WareHouseBEntities cxt = new WareHouseBEntities())
+            {
+               
+               
+            }
+        }
 
+        private void dataKlanten_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+            {
+                DataGrid dg = (DataGrid)sender;
+                DataRowView dataRowView = dg.SelectedItem as DataRowView;
+                if (dataRowView != null)
+                {
+                    txtEmail.Text = dataRowView["Emaiadress"].ToString();
+                }
+            }
         }
     }
 }

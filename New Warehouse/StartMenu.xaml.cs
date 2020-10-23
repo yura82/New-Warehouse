@@ -54,7 +54,7 @@ namespace New_Warehouse
                 int randompaswoord = random.Next();
                 cxt.Paswoords.Add(new Paswoord()
                 {
-                    UserName = txtVoornam.Text ,
+                    UserName = txtVoornam.Text + txtPostcode.Text,
                     UserPaswoord = randompaswoord.ToString(),
                     UserType = "Klant"
                 }) ;

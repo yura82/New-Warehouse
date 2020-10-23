@@ -11,22 +11,24 @@
             <TabItem Header="KLANTEN">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="140"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="130.335"/>
+                        <ColumnDefinition Width="9.665"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="71*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid Grid.Column="1" x:Name="dataKlanten"/>
-                    <DockPanel>
+                    <DataGrid Grid.Column="2" x:Name="dataKlanten" SelectionChanged="dataKlanten_SelectionChanged" Grid.ColumnSpan="2"/>
+                    <DockPanel Grid.ColumnSpan="2">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
-                                
+
                             </Grid.RowDefinitions>
                             <Button x:Name="btnView" Content="View" Click="btnView_Click" Margin="8"/>
                             <Button x:Name="btnSaveChanges" Content="Save" Click="btnSaveChanges_Click" Margin="8" Grid.Row="1"/>
-                            
+                            <TextBox Grid.Row="2" x:Name="txtEmail"/>
                         </Grid>
                     </DockPanel>
                 </Grid>
@@ -37,24 +39,28 @@
                         <ColumnDefinition Width="140"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid Grid.Column="1" x:Name="Workers"/>
+                    <DataGrid Grid.Column="1" x:Name="dtWorkers"/>
                     <DockPanel>
                         <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
                             </Grid.RowDefinitions>
-                            <Button x:Name="btnViewWorkers" Content="View" Margin="8" Click="btnViewWorkers_Click"/>
-                            <Button Grid.Row="1" x:Name="Save" Margin="8" Content="Save" Click="Save_Click"/>
-                            
+                            <Button x:Name="btnViewWorkers" Content="View" Margin="8,8,8,8.4" Click="btnViewWorkers_Click" Grid.ColumnSpan="2"/>
+                            <Button Grid.Row="1" x:Name="Save" Margin="8,7.6,8,7.8" Content="Save" Click="Save_Click" Grid.ColumnSpan="2"/>
+
                         </Grid>
                     </DockPanel>
                 </Grid>
             </TabItem>
             <TabItem Header="Product">
-                
+
             </TabItem>
         </TabControl>
     </Grid>
